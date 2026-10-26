@@ -1,126 +1,130 @@
 # MhammedAzad - Member 2 / B - editing and deletion
 
-SECJ3343 Project 1, Group TaskFlow; leader Aland Karwan. Due 27 October 2026
-(Asia/Baghdad). Software baseline main@5133a6c; authored on bc7b08e, whose src/ and
-root README.md are identical to that baseline.
+SECJ3343 Project 1; Group TaskFlow; leader Aland Karwan; due 27 October 2026
+(Asia/Baghdad). Software basis main@5133a6c. Branch starts at bc7b08e, whose src/
+and root README.md match that baseline. PR: aland99/TaskFlow#1.
 
-## Identity and ownership
+## Identity and exclusive scope
 
-GitHub CLI authentication was verified as MhammedAzad. `gh api user -q .name`
-returned no value; `git config user.name` also returned no value, so the requested
-GitHub-login fallback is used as FULL_NAME, with safe account/file stem
-`mhammedazad`. The repository roster's B placeholder is Lanya; it has not been
-changed or treated as evidence of this user's name. Only slot B is authored here.
-origin is MhammedAzad/TaskFlow; upstream is aland99/TaskFlow. Branch:
-codex/project1-member-b. No collaborator invitation or merge is needed.
+GitHub CLI authenticated as MhammedAzad. GitHub's name and git's configured name
+were empty at identity resolution, so the requested fallback is FULL_NAME
+MhammedAzad; local account/file stem mhammedazad. The roster's B placeholder Lanya
+was not treated as this user's identity; team.json is unchanged. origin is
+MhammedAzad/TaskFlow, upstream is aland99/TaskFlow; branch codex/project1-member-b.
 
-## Design inventory and scope
+Only B assertions are authored: README TF-REQ-009 through TF-REQ-015 and edit
+persistence in TF-REQ-018. Creation/text-boundary sweeps, enum/date partitions,
+status/counts, querying, generic storage recovery and navigation remain other
+members' assertions. Shared actions are fixture setup. Requirements cite README
+sections and implementing src paths/functions, identifying code-derived refinements.
+Aland's module supplied the data structure and quality reference; B content is
+independently authored.
 
-- 41 manual cases: TC-B-001 through TC-B-041; 135 numbered action/result pairs.
-- 14 requirements: REQ-B-001 through REQ-B-014, across SRS-B-EDIT,
-  SRS-B-CANCEL and SRS-B-DELETE.
-- Three child suites: TS-B1 (18), TS-B2 (9), TS-B3 (14), under
-  B - MhammedAzad - Editing and deletion.
-- 83 designed requirement/case links. Structural coverage is 14/14 (100%);
-  every case references at least one defined requirement. This is **design
-  coverage**, not verified database coverage or execution coverage.
-- Techniques: EP (representative invalid/optional/single-task partitions),
-  Decision Table (explicit invalid-title/invalid-description rejection row),
-  State Transition (named saved/draft/rejected/closed/removed states), Use Case,
-  and Error Guessing (stale targets, duplicate titles, unchanged saves,
-  interior mouse events). No numeric boundary sweep is claimed by B.
-- Assertions cover README TF-REQ-009–015 and edit persistence only of TF-REQ-018.
-  Shared creation, valid enum/date selections and reload are setup/observations
-  of edit/delete outcomes. A owns creation/text-boundary/counter behavior;
-  C owns enum/date partitions and status/counts; D owns queries; E owns general
-  storage recovery, navigation and modal accessibility.
-- Each independent case includes exact disposable-profile JSON setup, original
-  identities/timestamps, concrete data and exact UI/error text. Timestamp
-  assertions use raw ISO values, not the formatted Created label.
-- Requirements cite the root README sections and implementing src paths/functions.
-  Code-derived dismissal/repeated-operation refinements are explicitly identified.
+## Actual local TestLink verification
 
-## Checks actually completed on 27 October 2026 (Asia/Baghdad)
+Verified 27 October 2026 (Asia/Baghdad; evidence timestamps explicitly use UTC):
 
-1. Read qa/project1/README.md, root README.md, App updateTask/deleteTask/commit,
-   TaskFormModal, ConfirmDeleteModal, Modal, TaskCard, normalizeValues and
-   validateTask. Used Aland's module for data structure and quality reference;
-   authored B requirements, fixtures, actions and expectations independently.
-2. `python3 -I qa/testlink/scripts/validate.py mhammedazad` passed using the
-   available Python 3.12.14 interpreter. Recorded in design-validation.json.
-   Unique IDs, valid techniques/importance, nonempty action/result steps and
-   both directions of the declared mappings were checked.
-3. Existing application utility suite: **23 checks passed**. Production build:
-   **passed**. These pre-existing checks are supporting verification, not new
-   B-authored tests or execution of all 41 manual designs.
-4. TaskFlow ran on http://localhost:5173. Chrome 156.0.8078.48 used a new disposable
-   profile. Nine grouped automated design-oracle spot checks observed prefill,
-   title-edit identity/timestamps/sibling preservation, whole-edit rejection,
-   correction/save, four edit dismissal paths, priority reload/reopen persistence,
-   exact deletion warning, four deletion dismissal paths, intended-id deletion and
-   same-title sibling deletion. Detailed observations and three screenshots are
-   under evidence/. These are limited spot checks, not a full manual test run.
-   Two initial automation-selector ambiguities were corrected by scoping controls
-   to the dialog and selecting the first fixture-ready element; the final run
-   completed successfully. Neither issue was an application defect.
-5. Reviewed the prefilled edit and deletion confirmation screenshots. The labels,
-   control values, buttons and exact warning match the authored expectations.
-6. Git, gh, Python 3, Google Chrome and Poppler were located/verified. GitHub CLI
-   was downloaded and authenticated by the human. Portable Git supplies Bash;
-   OpenSSL TLS was used because Windows Schannel could not acquire credentials
-   inside the sandbox. The fork was created with gh repo fork and cloned safely.
-   npm's lockfile rewrite and the loader's generated shared header change were
-   restored; neither shared tooling nor another member's files are included.
+| Item | Actual result |
+|---|---|
+| Cases | 41, TC-B-001 through TC-B-041 |
+| Numbered action/result steps | 135; exact content and numbering match the module |
+| Requirements / specifications | 14 / 3 |
+| Child suites | TS-B1: 18; TS-B2: 9; TS-B3: 14 |
+| Active requirement/case links | 83; exact set equality with the module |
+| Requirement coverage | 14/14 = 100%; every case references defined requirements |
+| Case, requirement and specification author | mhammedazad |
+| Local project role | senior tester, role 6 |
+| Plan | Project 1 - Test Case Design |
+| Build | TaskFlow main@5133a6c |
+| Assignment | All 41 assigned to mhammedazad on that plan/build |
+| Execution state | All 41 Not Run; no execution results claimed |
 
-## Physical Windows installation blocker — not completed
+These are actual server records, not inferred import success. Case API records
+were compared with every authored precondition, step/action/result, importance
+and author. Requirement API records were compared with IDs, titles, descriptions,
+specification ownership and author. Specification web views verify their authors.
+getReqCoverage supplied active requirement-to-case links. The exported testsuites
+XML independently supplied case-to-requirement mappings; both sets equal all 83
+declared pairs. The plan query filtered by actual member user ID and build.
 
-Docker Desktop was downloaded from its official distribution and its Authenticode
-signature verified. Its per-user installer deployed files but failed on required
-Windows registry writes (HKCU Run; access denied). Windows also reports WSL is
-not installed. The Docker client exists, but `docker info` cannot connect to the
-docker_engine named pipe: there is no running Docker engine. Finishing installation
-and WSL enablement needs a human Windows approval/install step outside this sandbox.
+quality.json records the audit. traceability.csv comes from actual coverage
+responses. evidence/testlink-*-records.json and testlink-requirement-coverage.json
+retain relevant records without API access keys. design-traceability.md is the
+earlier declared matrix. Techniques are EP, Decision Table, State Transition,
+Use Case and Error Guessing; no B-owned numeric boundary sweep is claimed.
 
-Actual requested command attempts:
+## Exports and visual review
 
-- `bash qa/testlink/setup.sh`: failed at the macOS `open -a Docker` fallback
-  (`open: command not found`) after Docker was unavailable. The script was not edited.
-- `python3 -I qa/testlink/scripts/load.py mhammedazad`: failed on its first Docker
-  Compose SQL query, exit 125. No local project, B account, cases, requirements,
-  plan or build can be claimed as loaded.
-- `python3 -I qa/testlink/scripts/report.py mhammedazad`: connection refused at
-  localhost:8090. No real TestLink PDFs or XML exports were produced.
+- Test case report: **46 pages**. Requirements basis: **13 pages**.
+- Both PDFs originate from the member's authenticated TestLink printDocument.php
+  responses after selecting the local project, then Chrome printing.
+- The testsuites XML is the actual TestLink web export: 41 cases, three child
+  suites, 135 steps and 83 associations. Preconditions, importance, complete steps
+  and references match the module. The requirements XML is the loader-format
+  import basis used for the actual import; its three specifications and 14
+  requirement IDs/titles/descriptions also match actual server records.
+- Parsed both XML files, checked every stable ID and both mapping directions.
+  See xml-review.json. Both PDFs contain all 41 case IDs and 14 requirement IDs.
+- Rendered all **59 final pages** with Poppler. High-resolution case review:
+  **1, 6, 16, 23, 34, 43, 46**. Basis review: **1, 3, 4, 7, 13**. Also scanned
+  contact sheets. This includes first/middle/last pages, full JSON fixtures,
+  timestamp expectations, invalid-edit errors, quoted confirmation, long
+  requirement rules and related-case lists.
+- Reviewed headers, authors, numbering, wrapping and table boundaries. No text
+  lies outside page bounds. Last-page numbers are 46/46 and 13/13. All 14
+  individual requirement coverage rows show 100% (1/1). pdf-review.json records
+  final hashes and checks; selected page PNGs are retained as evidence.
+- Corrected external print formatting for specification page breaks, label
+  columns and related-case separators; regenerated and rechecked the final PDFs.
+  Stable case names/IDs and content were retained. Shared report.py is unchanged.
 
-Therefore **actual TestLink counts/authorship/coverage, plan/build assignment,
-PDF first/middle/last-page review, long-field PDF review and XML export checks
-are pending**. No PDF or XML is substituted or fabricated. No TestLink execution
-results were recorded. Windows also requires an external runtime compatibility
-adapter for report.py's hardcoded macOS Chrome executable/path; the shared script
-must remain unchanged.
+## Checks and Windows preparation
 
-## Resume and correction procedure
+Read qa/project1/README.md, root README.md, App updateTask/deleteTask/commit,
+TaskFormModal, ConfirmDeleteModal, Modal, TaskCard, normalizeValues and validateTask.
+Isolated structural validation passed. Existing application tests: **23 checks
+passed**; production build passed. Nine grouped disposable-Chrome design-oracle
+spot checks observed prefill, atomic rejection/recovery, identity/timestamps,
+every dismissal path, priority persistence, exact warning and intended-id deletion
+including same-title siblings. These are limited spot checks, not execution of
+all 41 manual cases. Initial automation selector ambiguities were corrected;
+neither was an application defect.
 
-After the human finishes Docker Desktop/WSL setup and Docker reports a running
-engine: check 8090 is free (otherwise use one free TESTLINK_PORT consistently),
-rerun setup, validate, load, report and audit for mhammedazad only. Adapt the
-macOS Chrome launch externally on Windows. Verify actual B authorship, 41 cases,
-14 requirements, 3 child suites, 135 steps, 83 active mappings, senior tester role,
-Project 1 plan/build and zero claimed manual execution results. Use the existing
-audit.py and compare actual active mappings with the declared mapping set.
+The human installed Docker/WSL and ran setup. The first Windows helper's PATH-only
+cp shim was ineffective because Git Bash prepends /usr/bin. Explicitly applying
+the provided overlay to the local installation corrected it. No exports existed
+before that correction, and no earlier export success is claimed.
 
-Open both generated PDFs and both XML exports; render and inspect first/middle/last
-PDF pages and all long fixture/step/requirement fields. For corrections, keep stable
-case names and IDs and rerun the loader to update/resume, then regenerate and reaudit.
-If any old case is renamed/removed, export/back up first and remove only that old B
-case within this local B suite; never another tester's data. Record corrections here.
+The sandbox cannot access the Docker named pipe. Import and verification used
+supported TestLink XML-RPC and authenticated web forms. An external print adapter
+resolves IDs from actual API records and uses Windows Chrome browser printing,
+after the command-line GPU process failed. No Docker relay, new remote project,
+shared-tool changes or fabricated SQL results were used.
 
-Commit only this member's module and qa/project1/mhammedazad deliverables/evidence.
-Update the pull request with real exported PDFs/XML and actual audit counts, and
-mark it ready after those checks succeed. Do not merge.
+## Known TestLink aggregate display limitation
 
-The local environment is preparation only. No lecturer-server project was created,
-and no lecturer import or university submission occurred. The lecturer's slides
-were not present in this workspace, so their physical review is not claimed; the
-existing-project restriction is supplied by the task and repository instructions.
-Import eventual exports into the lecturer's EXISTING assigned project, using its
-existing roles and verified requirement mappings; do not create another project.
+Legacy specification-total rows remain N/A (7/0), N/A (3/0), N/A (4/0).
+This TestLink version's create_revision omits total_req and update_revision does
+not persist it. A member-owned edit-form correction did not save that field.
+Automatic approval rejected the direct Docker metadata query because session
+escalation is disabled. The shared loader normally supplies the direct SQL repair
+when the leader loads the group outside this sandbox. Shared tooling and upstream
+TestLink code were not changed.
+
+This is an optional aggregate expected-total display issue: all 14 individual
+requirements show 100%, and actual active links plus XML independently verify
+14/14 and 83 mappings. The original N/A text is retained honestly in the PDF.
+See evidence/specification-total-display.json.
+
+## Handoff and corrections
+
+Only this member's module and qa/project1/mhammedazad deliverables/evidence are
+committed. Future content corrections retain stable case names, reload to update,
+then regenerate and re-audit. Before removing/renaming an old B case, export/back
+up and remove only that old case in the local B suite. Never alter another tester's
+data. This review changed no case names/content.
+
+Local preparation only: no lecturer import or university submission occurred.
+The slides were not physically available, so their review is not claimed. Import
+XML into the lecturer's EXISTING assigned project with existing roles, and verify
+that server's prefix and mappings. No new lecturer project, invitation or merge.
